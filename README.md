@@ -1,2 +1,226 @@
-# BSI2019-Campeonato
-Campeonato de basquete 
+# POO-ATV1-BSI2019
+
+## Atividade 01 - Programação Orientada a Objetos - BES2019
+
+#### Objetivo: Desenvolver um projeto com a linguagem Java que resolva um determinado problema
+
+O problema escolhido para a resolução desta atividade trata da organização de arquivos, classificados pelo 
+ano de publicação deles e o semestre. No problema em questão, foi restringido o uso de dois anos.
+
+Esse programa pode ser utilizado para por exemplo contabilizar quantos artigos foram publicados no
+primeiro semestre de um ano em comparação a outros.
+
+Para a atividade foi seguido os seguintes critérios: 
+#### Requisitos
+- Descrição do Problema escolhido e complexidade
+- Uso de Entrada de Dados
+- Uso de Estruturas Condicionais
+- Uso de Laços de Repetições
+- Uso de Classe String ou Math
+- Uso de Arranjos/Matrizes
+- Uso de Métodos Estáticos
+- Explicação do código com comentários
+- Solução do problema com o programa desenvolvido
+- Repositório no Github
+- Descrição do problema com Markdown **( ponto extra )**	
+
+---------------------------------------------------------------
+```java
+/*
+ * O problema escolhido foi um software cuja função é cadastrar times, jogos e imprimir lista de times e de resultados dos jogos */
+ 
+ //importa bibliotecas necessarias
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.List;
+//classe principal
+public class Main
+{
+    //cria variavel para ser usada em todo o fonte
+    static String espacamento = "______________________ \n";
+    public static void main(String[] args) 
+    {
+        String opcaoSelecionada;
+        boolean retornoMenu = true;
+        String[] opcoesMenu = new String[]
+        {
+            "1 - Adiciona Time \n",
+            "2 - Adiciona Jogo \n",
+            "3 - Imprime Times \n",
+            "4 - Imprime Resultados \n",
+            "5 - Sair \n"
+        };
+
+        //cria a lista
+        List<String> times = new ArrayList<String> ( );
+        List<Jogos> jogos = new ArrayList<Jogos> ( );
+
+        //Loop menu 
+        while (retornoMenu)
+        {
+            System.out.print(espacamento);
+            //Imprime o array com o menu de opcoes
+            System.out.println("      BASKETBALL");
+            System.out.print(espacamento);
+            for(String opcoes: opcoesMenu)
+            {
+                System.out.print(opcoes);
+            }
+            System.out.print(espacamento);
+
+            System.out.print("Digite opção do menu \n");
+            //Recebe a opcao do menu escolhida
+            Scanner lerop = new Scanner(System.in);
+            opcaoSelecionada = lerop.next();
+            System.out.print("\n");
+            System.out.print(espacamento);
+
+            //Faz a condicional da variavel opcaoSelecionada
+            switch (opcaoSelecionada)
+            {
+                case "1":
+                    //Adiciona times a lista times
+                    AdicionarTime(times);
+                    break;
+                case "2":
+                    //adiciona jogos a lista jogos
+                    AdicionarJogo(jogos, times);
+                    break;
+                case "3":
+                    //Imprime a lista de times
+                    ImprimirTimes(times);
+                    break;
+                case "4":
+                    //imprime os resultados dos jogos adicionados
+                    ImprimirResult(jogos);
+                    break;
+                case "5":
+                    //encerra o programa
+                    System.out.print("SAIR! \n");
+                    retornoMenu = false;
+                    break;
+                default:
+                    //validaçao para digitar uma opcao valida
+                    System.out.print("Digite uma opção válida! \n");
+                    break;
+            }
+        }
+    }
+    //Gera impressão dos resultados 
+    private static void ImprimirResult(List<Jogos> jogos)
+    {
+        System.out.print(espacamento);
+        System.out.print("---IMPRESSAO RESULTADOS---- \n");
+        System.out.print(espacamento);
+        int totalJogos = 0;
+        float totalPontos = 0;
+        float mediaPontos = 0;
+        //faz a impressao dos resultados dos jogos 
+        for(Jogos jogo: jogos)
+        {
+            System.out.print(jogo.time1 + " " + jogo.resultadoTime1 + " X " + jogo.time2 + " " + jogo.resultadoTime2 + " \n");
+            //calcula a media de pontos por jogo
+            totalJogos ++;
+            totalPontos += jogo.resultadoTime1 + jogo.resultadoTime2;
+        }
+
+        //imprime a media
+        System.out.print(espacamento);
+        System.out.println("Média de pontos por Jogo: " + (totalPontos/totalJogos));
+
+    }
+    //Gera a impressao da lista de times
+    private static void ImprimirTimes(List<String> times)
+    {
+        System.out.print(espacamento);
+        System.out.print("---IMPRESSAO TIMES---- \n");
+        System.out.print(espacamento);
+        //imprime a lista de times
+        for(String time: times)
+        {              
+            System.out.print(time+" \n");
+        }
+    }
+    //Faz a adição de novos times
+    private static void AdicionarTime(List<String> times)
+    {
+        boolean continuaAdicionar = true;
+        String adiciona = " ";
+        String novoItem = "N";
+        //Loop para adicionar times
+        while (continuaAdicionar)
+        {
+            System.out.print("Novo time na lista:  \n");
+            Scanner add = new Scanner(System.in);
+            adiciona = add.next();
+            //valida se já existe
+            times.add(adiciona);
+            //pergunta ao usuário se quer adicionar mais times
+            System.out.print("Deseja adicionar um novo time (S/N) ? \n");
+            Scanner item = new Scanner(System.in);
+            novoItem = item.next();
+
+            //se não for adicionar novo, retorna para o menu
+            if((novoItem.equals("N")) || (novoItem.equals("n")))
+            {
+                continuaAdicionar = false;
+            }
+        }
+    }
+    //Faz a adição de novos Jogos 
+    private static void AdicionarJogo(List<Jogos> jogos, List<String> times)
+    {
+        //Instancia o objeto
+        Jogos jogo = new Jogos();
+
+        System.out.print(espacamento);
+        //Imprime a lista de times para a escolha do jogo
+        for(String time: times)
+        {
+           System.out.print(time + " \n");
+        }
+        System.out.print(espacamento);
+
+        System.out.print("Digite um Time da lista acima: \n");
+        Scanner time1 = new Scanner(System.in);
+        jogo.time1 = time1.next();
+        //Gera pontuação automática para o time 1
+        jogo.resultadoTime1 = (int) (Math.random() * 201);  
+
+        System.out.print(espacamento);
+        //Gera lista com times para a escolha de um adversário
+        for(String time: times)
+        {
+            //Validação para nao imprimir o time ja selecionado
+            if (!time.equals(jogo.time1))
+            {
+                System.out.print(time + " \n");
+            }                
+        }
+        System.out.print(espacamento);
+        //Pede q incluam o time adversario
+        System.out.print("Digite o time Adversário da lista acima: \n");
+        Scanner time2 = new Scanner(System.in);
+        jogo.time2 = time2.next();
+        //gera pontuação automatica para o time 2
+        jogo.resultadoTime2 = (int) (Math.random() * 201);   
+        //adiciona o resultado a lista de jogos
+        jogos.add(jogo);
+    }
+}
+//cria classe classe de jogos
+class Jogos
+{
+    public String time1;
+    public String time2;
+    public int resultadoTime1;
+    public int resultadoTime2;
+}
+
+````
+<p align="center">
+  <a>
+    <img src="http://python.joinville.br/img/logo-univille.png" />
+  </a>
+  <h3 align="center">Universidade da Região de Joinville</h3>
+</p>
