@@ -5,7 +5,7 @@ import java.util.Scanner;
 // Importa a classe List, que permite a leitura de List
 import java.util.List;
 //classe principal
-public class Main
+public class Campeonato
 {
     //cria variavel para ser usada em todo o fonte
     static String espacamento = "______________________ \n";
