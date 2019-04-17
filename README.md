@@ -25,7 +25,8 @@ Para a atividade foi seguido os seguintes critérios:
 ---------------------------------------------------------------
 ```java
 /*
- * O problema escolhido foi um software cuja função é cadastrar times, jogos e imprimir lista de times e de resultados dos jogos */
+ * O problema escolhido foi um software cuja função é cadastrar times, jogos e imprimir lista de times e de resultados dos jogos 
+ */
  
 // Importa a classe ArrayList, que permite a leitura de ArrayList
 import java.util.ArrayList;
