@@ -1,14 +1,12 @@
-# POO-ATV1-BSI2019
+# Atividade1_JAVA-BSI2019
 
 ## Atividade 01 - Programação Orientada a Objetos - BES2019
 
 #### Objetivo: Desenvolver um projeto com a linguagem Java que resolva um determinado problema
 
-O problema escolhido para a resolução desta atividade trata da organização de arquivos, classificados pelo 
-ano de publicação deles e o semestre. No problema em questão, foi restringido o uso de dois anos.
+O problema escolhido foi um software cuja função é cadastrar times, jogos e imprimir lista de times e de resultados dos jogos
 
-Esse programa pode ser utilizado para por exemplo contabilizar quantos artigos foram publicados no
-primeiro semestre de um ano em comparação a outros.
+Esse programa em questão foi aplicado para um campeonato de basquete, podendo também ser aplicados para mais esportes.
 
 Para a atividade foi seguido os seguintes critérios: 
 #### Requisitos
