@@ -29,9 +29,11 @@ Para a atividade foi seguido os seguintes critérios:
 /*
  * O problema escolhido foi um software cuja função é cadastrar times, jogos e imprimir lista de times e de resultados dos jogos */
  
- //importa bibliotecas necessarias
+// Importa a classe ArrayList, que permite a leitura de ArrayList
 import java.util.ArrayList;
+// Importa a classe Scanner, que permite a leitura de dados a partir do teclado
 import java.util.Scanner;
+// Importa a classe List, que permite a leitura de List
 import java.util.List;
 //classe principal
 public class Main
@@ -67,14 +69,14 @@ public class Main
                 System.out.print(opcoes);
             }
             System.out.print(espacamento);
-
+            
             System.out.print("Digite opção do menu \n");
             //Recebe a opcao do menu escolhida
             Scanner lerop = new Scanner(System.in);
             opcaoSelecionada = lerop.next();
             System.out.print("\n");
             System.out.print(espacamento);
-
+            
             //Faz a condicional da variavel opcaoSelecionada
             switch (opcaoSelecionada)
             {
@@ -123,11 +125,11 @@ public class Main
             totalJogos ++;
             totalPontos += jogo.resultadoTime1 + jogo.resultadoTime2;
         }
-
+        
         //imprime a media
         System.out.print(espacamento);
         System.out.println("Média de pontos por Jogo: " + (totalPontos/totalJogos));
-
+        
     }
     //Gera a impressao da lista de times
     private static void ImprimirTimes(List<String> times)
@@ -177,7 +179,7 @@ public class Main
         //Imprime a lista de times para a escolha do jogo
         for(String time: times)
         {
-           System.out.print(time + " \n");
+            System.out.print(time + " \n");
         }
         System.out.print(espacamento);
 
@@ -216,7 +218,6 @@ class Jogos
     public int resultadoTime1;
     public int resultadoTime2;
 }
-
 ````
 <p align="center">
   <a>
