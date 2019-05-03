@@ -1,276 +1,196 @@
-```java
 Aluno: Christopher Ramos Miranda 
-
- 
 
 Introdução à Orientada à Objetos Lista de Exercícios Programação Orientada á Objetos – UNIVILLE 
 
- Utilize os seus conhecimentos de orientação à objetos para resolver os problemas solicitados. 
+Utilize os seus conhecimentos de orientação à objetos para resolver os problemas solicitados. 
 
- 
 
 1- O que é um objeto? 
 
 É uma coisa, entidade, qualquer coisa que possa imaginar e que tenha uma identidade. Objetos possuem atributos e comportamentos. 
 
- 
 
 2- Identifique 3 características e 3 comportamentos de um carro. 
 
 Características:  
-
-Cor 
-
-Tamanho 
-
-Peso 
+  Cor 
+  Tamanho 
+  Peso 
 
 Comportamentos: 
+  Trocar Marcha 
+  Frear 
+  Virar
 
-Trocar Marcha 
-
-Frear 
-
-Virar 
-
- 
 
 3- No contexto de Orientação a Objetos, as características e comportamentos são chamados respectivamente de? 
 
 Características são os atributos do objeto. 
-
 Comportamentos são os métodos da classe. 
-
  
 
 4- Qual o objetivo da Programação Orientada a Objetos? 
 
-reduzir a complexidade no desenvolvimento de software e aumentar sua produtividade e tem conceitos como de encapsulamento, classe, herança e polimorfismo 
+reduzir a complexidade no desenvolvimento de software e aumentar sua produtividade e tem conceitos como de encapsulamento, 
+classe, herança e polimorfismo 
 
-Quebra de Página
- 
 
 5- O que é abstração? Cite um exemplo. 
 
-Como o primeiro pilar, a abstração é utilizada para a definição de entidades do mundo real. Sendo onde são criadas as classes. Essas entidades são consideradas tudo que é real, tendo como consideração as suas características e ações. Como exemplo: 
+Como o primeiro pilar, a abstração é utilizada para a definição de entidades do mundo real. Sendo onde são criadas as classes. 
+Essas entidades são consideradas tudo que é real, tendo como consideração as suas características e ações. Como exemplo: 
 
-Entidade 
-
-Característica 
-
-Comportamento 
-
-Carro 
-
-Cor, tamanho, peso 
-
-Trocar marcha, frear, virar, buzinar 
-
+| Entidade | Característica     | Comportamento                        |
+|----------|--------------------|--------------------------------------|
+| carro    | Cor, tamanho, peso | Trocar marcha, frear, virar, buzinar |
  
 
 6- O que é classe? 
 
-Classe é um conjunto de objetos que possuem características semelhantes. E a classe define o comportamento dos objetos por meio dos métodos e o estado por meio dos atributos. 
-
+Classe é um conjunto de objetos que possuem características semelhantes. E a classe define o comportamento dos 
+objetos por meio dos métodos e o estado por meio dos atributos. 
  
 
 7- Qual o padrão utilizado para nomear classes? Cite um exemplo. 
 
 declarar a visibilidade + digitar a palavra reservada class + NomeDaClasse + abrir e fechar chaves {}. 
-
 Exemplo: class Carros{} 
 
- 
 
 8- Qual opção apresenta corretamente o nome da classe carro elétrico? 
 
-4. CarroElétrico 
+   4. CarroElétrico 
 
- 
 
 9- Qual é o padrão utilizado para nomear os atributos? Cite um exemplo 
 
 Os atributos (variáveis) podem começar com qualquer letra e os caracteres $ ou _, porém não podem começar com números. 
-
 Exemplo:  
 
 public class Carros{ 
-
-String cor; 
-
-Int peso; 
-
-Int tamanho; 
-
+   String cor; 
+   Int peso; 
+   Int tamanho; 
 } 
-
-Quebra de Página
  
 
 10- Qual opção apresenta corretamente o nome do atributo cor de fundo? 
 
-3. corDeFundo 
+   3. corDeFundo 
 
- 
 
 11- Qual é o padrão utilizado para nomear os métodos? Cite um exemplo. 
 
 podem começar com qualquer letra minúscula, não podem possuir acentos e não podem começar com números. 
-
 Exemplo: 
 
 class Carro{ 
-
     void buzinar(){ 
-
     } 
-
     void acelerar{ 
-
     } 
-
 } 
 
- 
 
 12- Qual opção apresenta corretamente o nome do método está vazio? 
 
 estaVazio 
 
- 
 
 13- No contexto de orientação à objetos, o que é um objeto? Em que momento existe um objeto? Quando ele deixa de existir? 
 
-Objeto é uma referência a um local da memória que possui um valor. Um objeto pode existir quando for instanciado na memória, quando se usa o operador new. Deixa de existir quando  o programa é encerrado. 
-
+Objeto é uma referência a um local da memória que possui um valor. Um objeto pode existir quando for instanciado na memória, quando 
+se usa o operador new. Deixa de existir quando  o programa é encerrado. 
  
 
 14- Qual o objetivo do operador new? 
 
-Criar um novo objeto. Toda vez que é digitada a palavra reservada new, o objeto solicita para a memória do sistema armazená-lo, onde chama o construtor da classe para inicializar o objeto. 
-
- 
-
-Quebra de Página
+Criar um novo objeto. Toda vez que é digitada a palavra reservada new, o objeto solicita para a memória do sistema armazená-lo, onde 
+chama o construtor da classe para inicializar o objeto. 
  
 
 15- O que é o construtor? Qual é o seu objetivo? Qual deve ser o seu nome? Cite um exemplo. 
 
-é um método especial, pois inicializa seus atributos toda vez que é instanciado (inicializado). São os responsáveis por criar o objeto em memória, ou seja, instanciar a classe que foi definida. A identificação de um construtor em uma classe é sempre o mesmo nome da classe.  
-
+é um método especial, pois inicializa seus atributos toda vez que é instanciado (inicializado). São os responsáveis por criar o 
+objeto em memória, ou seja, instanciar a classe que foi definida. A identificação de um construtor em uma classe é sempre o mesmo 
+nome da classe.  
 Exemplo: 
 
 public class Carro{  
-
-           public Carro(){ 
-
+   public Carro(){ 
+   
+   } 
 } 
-
-} 
-
  
 
 16- Caso o construtor da classe Aluno não for declarado, qual será o seu construtor? 
 
-Seu construtor será Aluno, pois sempre que criamos uma classe, Java automaticamente vincula um método construtor padrão interno com o mesmo nome da classe, mas sem inicializar nenhum atributo. 
+Seu construtor será Aluno, pois sempre que criamos uma classe, Java automaticamente vincula um método construtor padrão interno 
+com o mesmo nome da classe, mas sem inicializar nenhum atributo. 
 
- 
-
-Quebra de Página
- 
 
 17- Crie um exemplo de instanciação da classe Aluno. Utilize o construtor padrão. 
 
 public class Aluno { 
-
-        public Aluno() {         
-
-        } 
-
+   public Aluno() {         
+   
+   } 
 } 
-
  
 
 18- O que é encapsulamento? 
 
 consiste em “esconder” os atributos da classe de quem for utilizá-la. 
-
  
 
 19- Qual é o objetivo do modificador de acesso public? 
 
 Public pode ser acessada de qualquer lugar e por qualquer entidade que possa visualizar a classe a que ela pertence. 
 
- 
+
 
 20- Qual é o objetivo do modificador de acesso private? 
 
-Private não pode ser acessado ou usado por nenhuma outra classe. Esse modificador não se aplica às classes, somente para seus métodos e atributos. Esses atributos e métodos também não podem ser visualizados pelas classes herdadas. 
+Private não pode ser acessado ou usado por nenhuma outra classe. Esse modificador não se aplica às classes, somente para seus 
+métodos e atributos. Esses atributos e métodos também não podem ser visualizados pelas classes herdadas. 
 
- 
-
-Quebra de Página
- 
 
 21- Como é aplicado o encapsulamento em uma classe? Considere a classe Aluno com o atributo matrícula. 
 
 Ele serve para controlar o acesso aos atributos e métodos de uma classe. 
 
 public class Aluno{ 
-
-private int matricula; 
-
-public int getMatricula(){ 
-
-return matricula; 
-
+   private int matricula; 
+   public int getMatricula(){ 
+      return matricula; 
+   } 
+   public void setMatricula(int matricula){ 
+      this.matricula = matricula; 
+   } 
 } 
 
-public void setMatricula(int matricula){ 
-
-this.matricula = matricula; 
-
-} 
-
-} 
-
- 
 
 22- Qual o objetivo dos métodos getters? Crie um exemplo 
 
 os métodos getters servem para retornar o valor de uma propriedade. 
 
 public class Carro{ 
-
     private String marca; 
-
     public String getMarca() { 
-
         return marca; 
-
     } 
-
 } 
 
- 
-
-Quebra de Página
- 
 
 23- Qual o objetivo dos métodos setters? Crie um exemplo 
 
 os métodos setters servem para alterar a informação de uma propriedade de um objeto. 
 
 public class Carro{ 
-
-private String marca; 
-
-public void setMarca(String marca) { 
-
+   private String marca; 
+   public void setMarca(String marca) { 
       this.marca= marca; 
-
-           } 
-
+   } 
 } 
 
  
@@ -279,309 +199,200 @@ public void setMarca(String marca) {
 
 A parte superior exibe o nome da classe, enquanto a parte do meio contém os atributos da classe. A parte inferior representa os métodos. 
 
- 
 
 25- Qual é o padrão utilizado para representar um atributo no diagrama de classe UML? Crie um exemplo. 
 
-No UML um atributo é composto por letras e dígitos, é sugerido capitalizar todas as primeiras letras de cada palavra exceto da primeira. 
-
+No UML um atributo é composto por letras e dígitos, é sugerido capitalizar todas as primeiras letras de cada palavra exceto da primeira.
 Exemplo: 
 
-Livro 
+|Livro              |        
+|-------------------|
+|-nome: String      |
+|-nomeAutor: String |
+|-------------------|
+|                   |
 
--nome: String 
 
--nomeAutor: String 
-
- 
-
- 
-
-Quebra de Página
- 
 
 26- Qual é o padrão utilizado para representar um método no diagrama de classe UML? Crie um exemplo 
 
 Métodos indicam as operações que iram ser realizadas, são sempre nomeadas com ações  
-
 Exemplo: 
 
-Livro 
-
- 
-
-+abrirLivro(): boolean 
-
-+fecharLivro(): boolean 
-
+|Livro                   |        
+|------------------------|
+|                        |
+|------------------------|
+|+abrirLivro(): boolean  |
+|+fecharLivro(): boolean | 
  
 
 27- Como o construtor de uma classe pode ser diferenciado no diagrama de classe UML? Crie um exemplo. 
 
 Utilizando o <<create>> antes do metodo que leva o nome da classe. 
-
 << create >>+Livro(autor:String, titulo: String) 
 
- 
 
-28- Problema Quais são os símbolos utilizados no diagrama de classe UML para representar os modificadores de acessos aos atributos e métodos? Crie um exemplo. 
+28- Problema Quais são os símbolos utilizados no diagrama de classe UML para representar os modificadores de acessos aos atributos 
+e métodos? Crie um exemplo. 
 
 +público  
-
 #protegido 
-
 -privado 
-
 ~default 
 
-Pessoa 
-
--nome: String 
-
-#definirPeso(): void 
-
-+getNome(): String 
-
-die() 
-
+|Pessoa                    
+|--------------------------|
+|-nome: String             |
+|--------------------------|
+|#definirPeso(): void      |
+|+getNome(): String        |
+|die()                     |
  
 
-29- Considere a classe Cliente, com os atributos nome, email e telefone com os respectivos métodos getters e setters. Desenvolva o diagrama de classe UML. 
+29- Considere a classe Cliente, com os atributos nome, email e telefone com os respectivos métodos getters e setters. 
+Desenvolva o diagrama de classe UML. 
 
-Cliente 
+|Cliente                   |
+|--------------------------|
+|-nome: String             |
+|-email: String            |
+|-telefone: int            |
+|--------------------------|
+|+getNome(): String        |
+|+setNome(nome: String)    |
+|+getEmail(): String       |
+|+setEmail(email: String)  |
+|+getTel(): int            |
+|+setTel(tel: int)         |
 
--nome: String 
-
--email: String 
-
--telefone: int 
-
-+getNome(): String 
-
-+setNome(nome: String) 
-
-+getEmail(): String 
-
-+setEmail(email: String) 
-
-+getTel(): int 
-
-+setTel(tel: int) 
-
- 
-
-Quebra de Página
- 
 
 30- Considere a classe Cliente apresentado no Problema 29, e desenvolva o código Java correspondente. 
 
 public class Cliente{  
-
     private String nome;  
-
     private String email; 
-
     private int telefone;  
-
     public String getNome() { 
-
         return nome; 
-
     } 
-
     public void setNome(String nome) { 
-
         this.nome = nome; 
-
     }  
-
     public String getEmail() { 
-
         return email; 
-
     } 
-
     public void setEmail(String email) { 
-
         this.email = email; 
-
     } 
-
     public int getTelefone() { 
-
         return telefone; 
-
     } 
-
     public void setTelefone(int telefone) { 
-
         this.telefone = telefone; 
-
     } 
-
 } 
 
- 
-
-Quebra de Página
- 
 
 31- Desenvolva o código java das classes do apresentadas no diagrama de classes UML abaixo: 
 
 public class Produto { 
-
     private String nome;   
-
     public String getNome() { 
-
         return nome; 
-
     } 
-
     public void setNome(String nome) { 
-
         this.nome = nome; 
-
     } 
-
 } 
 
 public class Password{ 
-
-private String value;   
-
-public void Password(String value) { 
-
-this.value = value; 
-
-} 
-
-public boolean isEqual(Password p){ 
-
-return false; 
-
-} 
-
+   private String value;   
+   public void Password(String value) { 
+      this.value = value; 
+   } 
+   public boolean isEqual(Password p){ 
+      return false; 
+   } 
 } 
 
 public class Animal{ 
-
-private boolean alive; 
-
-public boolean isAlive(){ 
-
-return false; 
-
-} 
-
-private void die(){ 
-
-} 
-
-} 
-
-Quebra de Página
+   private boolean alive; 
+   public boolean isAlive(){ 
+      return false; 
+   } 
+   private void die(){  
+   } 
+}
  
 
 32- Desenvolva o diagrama de classe dos códigos Java abaixo. 
-
-Livro 
-
--nome: String 
-
-+getNome(): String 
-
-+setNome(nome: String) 
-
  
-
-ContaCorrente 
-
--saldo: double 
-
-+sacar(): double 
-
-+depositar(valor: double) 
-
--recalcularSaldo() 
-
+|Livro                  |
+|-----------------------|
+|-nome: String          |
+|-----------------------|
+|+getNome(): String     |
+|+setNome(nome: String) |
  
+|ContaCorrente             |
+|--------------------------|
+|-saldo: double            |
+|--------------------------|
+|+sacar(): double          |
+|+depositar(valor: double) |
+|-recalcularSaldo()        |
 
-Par 
+|Par            |
+|---------------|
+|+chave: String |
+|+valor: String |
+|---------------|
+|               |
 
-+chave: String 
+| Impressora                       |
+|----------------------------------|
+|                                  |
+|----------------------------------|
+| +depositar(documento: Documento) |
 
-+valor: String 
-
- 
-
- 
-
-Impressora 
-
- 
-
-+depositar(documento: Documento) 
-
- 
-
- 
 
 33- O que é o estado de um objeto? Cite um exemplo com a classe Aluno com os atributos nome, idade, matrícula e curso. Utilize o diagrama de estado de objeto. 
 
 Os valores atribuídos aos atributos de um objeto definem o seu estado. 
 
- 
 
 34- Qual é o estado do objeto da classe Dog quando é inicializado? Desenvolva o diagrama de objetos. 
+| D: Dog       |
+|--------------|
+| years: 0     |
+| name: null   |
+| alive: false |
 
-D: Dog 
-
-years: 0 
-
-name: null 
-
-alive: false 
-
- 
 
 35- Qual é o estado do objeto dog no final da execução do método main? Desenvolva o diagrama de objetos. 
+| D: Dog      |
+|-------------|
+| years: 10   |
+| name: Spike |
+| alive: true |
 
-D: Dog 
-
-years: 10 
-
-name: Spike 
-
-alive: true 
-
- 
-
-Quebra de Página
- 
 
 36- Qual é o estado do objeto pug e buldog após a execução da linha 6? Desenvolva o diagrama de objetos. 
 
-B: Dog 
+|B: Dog       |
+|-------------|
+|years: 0     |
+|name: Spike  |
+|alive: false |
 
-years: 0 
+|P: Dog       |
+|-------------|
+|years: 2     |
+|name: Spoke  |
+|alive: true  |
 
-name: Spike 
-
-alive: false 
-
-P: Dog 
-
-years: 2 
-
-name: Spoke 
-
-alive: true 
-
- 
 
 37- Analise o código abaixo. Verifique se existem problemas, caso sim, indique o problema e sugere as correções. 
 
 Na imagem é acessado de forma direta os atributos, porém, como é padrão deixá-los em privado, automaticamente é necessário o uso de setters para definir valor para os atributos e getters para retornar o valor do atributo. 
-
-''''
